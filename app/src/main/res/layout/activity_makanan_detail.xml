@@ -10,8 +10,10 @@
     <ImageView
         android:id="@+id/imgDetailFoto"
         android:layout_width="match_parent"
-        android:layout_height="154dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pecellele" />
 
     <TextView
         android:id="@+id/txtDetailNama"

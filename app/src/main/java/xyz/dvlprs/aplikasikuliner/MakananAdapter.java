@@ -45,10 +45,7 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), MakananDetail.class);
-                intent.putExtra("namaMakanan", makanan.getNamaMakanan());
-                intent.putExtra("deskripsiMakanan", makanan.getDeskripsiMakanan());
-                intent.putExtra("hargaMakanan", makanan.getHargaMakanan());
-                intent.putExtra("idGambarMakanan", makanan.getIdGambarMakanan());
+                intent.putExtra("makanan", makanan);
                 view.getContext().startActivity(intent);
             }
         });

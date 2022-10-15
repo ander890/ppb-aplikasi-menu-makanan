@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MakananDetail extends AppCompatActivity {
 
+    private Makanan makanan;
     private String namaMakanan, deskripsiMakanan, hargaMakanan;
     private int idGambarMakanan;
     private TextView txtDetailNama, txtDetailHarga, txtDetailDeskripsi;
@@ -21,13 +22,14 @@ public class MakananDetail extends AppCompatActivity {
         setContentView(R.layout.activity_makanan_detail);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            namaMakanan = extras.getString("namaMakanan");
-            deskripsiMakanan = extras.getString("deskripsiMakanan");
-            hargaMakanan = extras.getString("hargaMakanan");
-            idGambarMakanan = extras.getInt("idGambarMakanan");
+
+        makanan = (Makanan)getIntent().getSerializableExtra("makanan");
+
+        if (makanan != null) {
+            namaMakanan = makanan.getNamaMakanan();
+            deskripsiMakanan = makanan.getDeskripsiMakanan();
+            hargaMakanan = makanan.getHargaMakanan();
+            idGambarMakanan = makanan.getIdGambarMakanan();
 
             setTitle(namaMakanan);
 
@@ -44,7 +46,5 @@ public class MakananDetail extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
-
-
     }
 }

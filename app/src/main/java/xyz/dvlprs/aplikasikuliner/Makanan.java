@@ -1,6 +1,8 @@
 package xyz.dvlprs.aplikasikuliner;
 
-public class Makanan {
+import java.io.Serializable;
+
+public class Makanan implements Serializable {
 
     private String namaMakanan, deskripsiMakanan, hargaMakanan;
     private int idGambarMakanan;
